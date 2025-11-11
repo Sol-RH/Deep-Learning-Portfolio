@@ -11,8 +11,17 @@ para clasificar imágenes naturales del dataset **Intel Image Classification**. 
 ## Modelo
 Se desarrolló un modelo CNN con aumento de datos y capas de Batch Normalization,
 entrenado con optimizador Adam y tasa de aprendizaje de 2e-4.
-
 El modelo alcanzó una **precisión de 81%** en el conjunto de prueba.
+
+## Modelo entrenado
+El archivo `model_adjusted.keras` no se incluye en el repositorio por su tamaño.
+Puedes descargarlo desde el siguiente enlace:
+👉 [Descargar modelo entrenado](https://drive.google.com/drive/folders/1x7pUkJoCLf4zFFfLkQnGt5pLG5oY6562?usp=sharing)
+
+
+
+
+
 
 
 
