@@ -1,24 +1,64 @@
-# Intel Image Classification – Deep Learning
 
-Este proyecto implementa una red neuronal convolucional (CNN) en Keras + TensorFlow
-para clasificar imágenes naturales del dataset **Intel Image Classification**. Las categorías son:
-`buildings`, `forest`, `glacier`, `mountain`, `sea` y `street`.
+---
 
-## Estructura del proyecto
-- `intel_image_classification.ipynb`: Notebook principal con entrenamiento, ajuste y evaluación.
-- `model_adjusted.keras`: Modelo final entrenado.
+## 🧠 **Modelos implementados**
 
-## Modelo
-Se desarrolló un modelo CNN con aumento de datos y capas de Batch Normalization,
-entrenado con optimizador Adam y tasa de aprendizaje de 2e-4.
-El modelo alcanzó una **precisión de 81%** en el conjunto de prueba.
+### 🔹 **1. Modelo base (CNN desde cero)**
+- Arquitectura simple con tres bloques convolucionales
+- Entrada: 150×150
+- Aumento de datos básico
+- Optimizador: Adam (1e-4)
 
-## Modelo entrenado
-El archivo `model_adjusted.keras` no se incluye en el repositorio por su tamaño.
-Puedes descargarlo desde el siguiente enlace:
-👉 [Descargar modelo entrenado](https://drive.google.com/drive/folders/1x7pUkJoCLf4zFFfLkQnGt5pLG5oY6562?usp=sharing)
+**Precisión final:** ~0.76  
+Servió como punto de partida para el resto del proyecto.
 
+---
 
+### 🔹 **2. Modelo ajustado (CNN optimizada)**
+- Resolución aumentada a 224×224  
+- Capas **Batch Normalization** en todos los bloques  
+- Inclusión de un **SE Block (Squeeze-and-Excitation)**  
+- Regularización con Dropout del 50%  
+- Callbacks: EarlyStopping + ReduceLROnPlateau  
+
+**Precisión final:** ~0.88  
+Mejor estabilidad y mejor capacidad de generalización.
+
+---
+
+### 🔹 **3. Transfer Learning con MobileNetV2 (modelo final)**
+- MobileNetV2 preentrenada en ImageNet  
+- Fase 1: Feature extraction con la base congelada  
+- Fase 2: Fine-tuning de las últimas capas  
+- Aumento de datos y preprocesamiento acorde al modelo  
+- Clasificador denso de 256 neuronas
+
+**Precisión final:** **0.92**  
+Mejor desempeño global y menor tasa de error por clase.
+
+Este modelo es el utilizado en la entrega final.
+
+---
+
+## 📊 **Resultados generales**
+
+| Modelo                  | Accuracy |
+|-------------------------|----------|
+| Modelo base             | 0.76     |
+| Modelo ajustado         | 0.88     |
+| Transfer Learning (TL)  | **0.92** |
+
+El uso de **Transfer Learning** permitió una mejora significativa en el rendimiento sin necesidad de entrenar millones de parámetros desde cero.
+
+---
+
+## 📦 **Modelos entrenados**
+
+Debido a su tamaño, los modelos `.keras` **no se incluyen directamente en el repositorio**.  
+Puedes descargarlos desde el siguiente enlace:
+
+🔗 **[Enlace de descarga del modelo final (MobileNetV2 Fine-Tuned)](URL_AQUÍ)**  
+*(Reemplaza “URL_AQUÍ” con tu enlace real.)*
 
 
 
