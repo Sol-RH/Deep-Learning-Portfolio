@@ -52,7 +52,7 @@ El uso de **Transfer Learning** permitió una mejora significativa en el rendimi
 
 ---
 
-## 📦 **Modelos entrenados**
+## **Modelos entrenados**
 
 Debido a su tamaño, los modelos `.keras` **no se incluyen directamente en el repositorio**.  
 Puedes descargarlos desde el siguiente enlace:
